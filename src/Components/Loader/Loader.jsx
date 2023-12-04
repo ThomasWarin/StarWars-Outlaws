@@ -46,9 +46,9 @@ function Loader() {
           <div className="transitionDiv" />
         </div>
       </div>
-      <h1 className="Loader-title">
+      <p className="Loader-title">
         Loading<span>{counter()}</span>
-      </h1>
+      </p>
       <img src={logoSWO} alt="SWO Logo" className="Loader-logo" />
     </div>
   );
