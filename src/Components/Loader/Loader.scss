@@ -1,0 +1,111 @@
+@import '../../styles/variables';
+
+.Loader {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: black;
+  background-position:
+    50% 0,
+    50% 0;
+  position: relative;
+  overflow: hidden;
+
+  &-nyxContainer {
+    position: relative;
+    z-index: 10;
+    width: 80%;
+    max-width: 450px;
+
+    &__nyx {
+      width: 100%;
+    }
+    &__nyxShadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      overflow: hidden;
+
+      .transitionDiv {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+          $blue-swo-25,
+          $blue-swo-25 2px,
+          rgba(0, 0, 0, 0.85) 2px,
+          rgba(0, 0, 0, 0.85) 6px
+        );
+        background-size: 100% 6px;
+        animation: loaderNyx 7s linear forwards;
+
+        @keyframes loaderNyx {
+          0% {
+            background-position: 0% 0%;
+          }
+          70% {
+            transform: translateY(0%);
+          }
+          100% {
+            transform: translateY(100%);
+            background-position: 0% 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    align-self: left;
+    width: 95px;
+    opacity: 0;
+    animation: fadeOut 8s forwards;
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    top: 20%;
+    width: 75%;
+    scale: 1;
+    max-width: 550px;
+    z-index: 9;
+    opacity: 0;
+    animation: fadeIn 0.5s 8s forwards;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        scale: 1;
+      }
+      100% {
+        opacity: 1;
+        scale: 1.05;
+      }
+    }
+  }
+}
