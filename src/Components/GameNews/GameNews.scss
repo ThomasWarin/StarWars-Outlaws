@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.GameNews {
+  padding: 20px;
+
+  &-title {
+    font-size: 1.75rem;
+    padding: 20px 0 50px;
+  }
+
+  &-slider {
+    display: flex;
+    gap: 40px;
+
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding-bottom: 20px;
+    }
+
+    &-counter {
+      color: white;
+    }
+  }
+}

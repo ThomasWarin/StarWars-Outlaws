@@ -1,6 +1,5 @@
 // Import du style
 import './GameAbout.scss';
-import backgroundStar from '../../assets/SWO-Background.png';
 /// Articles
 import article1 from '../../assets/articles/SWO_InEngine_Discover a Galaxy of Opportunity_Reduce.png';
 import article2 from '../../assets/articles/SWO_InEngine_Become a Galactic Scoundrel_Reduce.png';
@@ -12,17 +11,8 @@ import Neons from '../UIComponents/Neons/Neons';
 import Article from '../UIComponents/Article/Article';
 
 function GameAbout() {
-  const styleBackground = {
-    backgroundImage: `linear-gradient(
-      90deg,
-      rgba(0,0,0,.65) 0%,
-      rgba(0,0,0,.85) 20%,
-      rgba(0,0,0,.85) 80%,
-      rgba(0,0,0,.65) 100%),
-      url('${backgroundStar}')`,
-  };
   return (
-    <section className="GameAbout" style={styleBackground}>
+    <section className="GameAbout">
       <Neons />
       <h2 className="GameAbout-title">About the game</h2>
       <p className="GameAbout-content">
