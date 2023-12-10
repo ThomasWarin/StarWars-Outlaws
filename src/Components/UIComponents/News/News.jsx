@@ -2,9 +2,9 @@
 // Import du style
 import './News.scss';
 
-function News({ picture, title, date, time, content, cta }) {
+function News({ id, picture, title, date, time, content, cta, state }) {
   return (
-    <div className="News">
+    <div className={`News ${state}`}>
       <picture className="News-picture">
         <img
           className="News-picture-image"

@@ -1,7 +1,42 @@
 @import '../../../styles/variables';
 
 .News {
-  min-width: 100%;
+  width: 100%;
+  position: absolute;
+
+  &.previous {
+    transform: translateX(calc(-100% - 20px));
+    transition: 0.3s;
+    &.left {
+      transform: translateX(0);
+    }
+    &.right {
+      transform: translateX(calc(100% + 20px));
+      z-index: -10;
+    }
+  }
+  &.current {
+    transform: translateX(0);
+    transition: 0.3s;
+    &.left {
+      transform: translateX(calc(100% + 20px));
+    }
+    &.right {
+      transform: translateX(calc(-100% - 20px));
+    }
+  }
+  &.next {
+    transform: translateX(calc(100% + 20px));
+    transition: 0.3s;
+    &.left {
+      transform: translateX(calc(-100% - 20px));
+      z-index: -10;
+    }
+    &.right {
+      transform: translateX(0);
+    }
+  }
+
   &-picture {
     position: relative;
     z-index: 20;
@@ -73,6 +108,6 @@
     font-weight: 900;
     font-size: 0.875rem;
     text-align: center;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
 }
